@@ -18,12 +18,12 @@ class Welcome extends Component {
           </h4>
           <div className="text-muted">
             click&nbsp;
-            <NavLink to="/newpost">
-              <a href="/newpost">
+            <NavLink to="/newapartment">
+              <a href="/newapartment">
                 HERE
               </a>
             </NavLink>
-            &nbsp;to create a Post
+            &nbsp;to list an Apartment
           </div>
           <br />
           <img className="image" src={puppies3} alt="Puppies at the park (3)" />

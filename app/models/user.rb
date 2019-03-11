@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   acts_as_paranoid
   has_secure_password
-  has_many :posts, dependent: :destroy
+  has_many :apartments, dependent: :destroy
 
   before_validation {
     (self.email = self.email.to_s.downcase)

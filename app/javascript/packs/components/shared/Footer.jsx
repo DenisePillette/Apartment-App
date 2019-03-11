@@ -8,13 +8,7 @@ class Footer extends Component {
         <Navbar bg="light" variant="light" expand="lg" fixed="bottom">
           <div>
             <span>
-              React-on-Rails SPA by&nbsp;
-            </span>
-            <a href="https://github.com/ChiefDakota" target="new">
-              ChiefDakota
-            </a>
-            <span>
-              &nbsp;and&nbsp;
+              Apartment App by&nbsp;
             </span>
             <a href="https://github.com/DenisePillette" target="new">
               DenisePillette

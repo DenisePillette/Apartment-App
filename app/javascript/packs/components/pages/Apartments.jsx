@@ -1,24 +1,24 @@
 import React, {Component} from 'react'
 import { Table, Col, Row, ListGroup, ListGroupItem } from 'react-bootstrap'
 import AuthService from '../../services/AuthService'
-import PostService from '../../services/PostService'
+import ApartmentService from '../../services/ApartmentService'
 import withAuth from '../../services/withAuth'
 
 const Auth = new AuthService()
-const Post = new PostService()
+const Apartment = new ApartmentService()
 
-class Posts extends Component {
+class Apartments extends Component {
   constructor() {
     super()
     this.state = {
-      posts: []
+      apartments: []
     }
   }
 
   componentDidMount() {
-    Post.getPosts(Auth.getToken())
+    Apartment.getApartments(Auth.getToken())
       .then(data => {
-        this.setState({ posts: data });
+        this.setState({ apartments: data });
       })
       .catch(error => console.log(error))
   }
@@ -30,22 +30,22 @@ class Posts extends Component {
           <Table>
             <br />
             <h1>
-              Posts
+              Apartments
             </h1>
-            <Row className="post-row">
-              <h4 className="posts-subtitle">
+            <Row className="apartment-row">
+              <h4 className="apartments-subtitle">
                 <small className="text-muted">
-                  All the posts!
+                  All the apartments!
                 </small>
               </h4>
               <Col>
                 <ListGroup variant="flush">
                   <ListGroupItem />
-                  {this.state.posts.map((post, index) =>
-                      <ListGroupItem key={`${post.post}${index}`}>
+                  {this.state.apartments.map((apartment, index) =>
+                      <ListGroupItem key={`${apartment.name}${index}`}>
                         <div>
                           <div>
-                            {post.post}
+                            {apartment.name}
                           </div>
                         </div>
                       </ListGroupItem>
@@ -61,4 +61,4 @@ class Posts extends Component {
   }
 }
 
-export default withAuth(Posts);
+export default withAuth(Apartments);

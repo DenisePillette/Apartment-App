@@ -6,8 +6,8 @@ import SignUp from './components/pages/SignUp'
 import Login from './components/pages/Login'
 import Welcome from './components/pages/Welcome'
 import About from './components/pages/About'
-import NewPost from './components/pages/NewPost'
-import Posts from './components/pages/Posts'
+import NewApartment from './components/pages/NewApartment'
+import Apartments from './components/pages/Apartments'
 import Footer from './components/shared/Footer'
 
 class App extends Component {
@@ -32,8 +32,8 @@ class App extends Component {
           <Route exact path="/login" component={Login} />
           <Route exact path="/welcome" component={Welcome} />
           <Route exact path="/about" component={About} />
-          <Route exact path="/newpost" component={NewPost} />
-          <Route exact path="/viewposts" component={Posts} />
+          <Route exact path="/newapartment" component={NewApartment} />
+          <Route exact path="/viewapartments" component={Apartments} />
         </Switch>
         <br />
         <br />

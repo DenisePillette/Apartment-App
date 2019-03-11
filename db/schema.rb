@@ -12,14 +12,14 @@
 
 ActiveRecord::Schema.define(version: 2019_03_09_220526) do
 
-  create_table "posts", force: :cascade do |t|
-    t.text "post"
+  create_table "apartments", force: :cascade do |t|
+    t.text "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.datetime "deleted_at"
-    t.index ["deleted_at"], name: "index_posts_on_deleted_at"
-    t.index ["user_id"], name: "index_posts_on_user_id"
+    t.index ["deleted_at"], name: "index_apartments_on_deleted_at"
+    t.index ["user_id"], name: "index_apartments_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

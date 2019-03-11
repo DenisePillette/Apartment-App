@@ -26,21 +26,21 @@ user_attributes.each do |attributes|
   User.create(attributes)
 end
 
-post_attributes = [
+apartment_attributes = [
   {
-    post: "It's been a 'ruff' day",
+    name: "1000-A Park Place",
     user_id: 1
   },
   {
-    post: "Squirrel!",
+    name: "24-24 Broadway",
     user_id: 2
   },
   {
-    post: "Thanks 'fur' the heads-up!",
+    name: "999 9th Ave.",
     user_id: 3
   },
 ]
 
-post_attributes.each do |attributes|
-  Post.create(attributes)
+apartment_attributes.each do |attributes|
+  Apartment.create(attributes)
 end

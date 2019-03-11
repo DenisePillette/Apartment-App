@@ -18,7 +18,7 @@ class Header extends Component {
         <Navbar collapseOnSelect bg="light" variant="light" expand="lg" fixed="top">
           <NavLink to="/">
             <Navbar.Brand href="/">
-              React-on-Rails SPA
+              Apartment App
             </Navbar.Brand>
           </NavLink>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -51,16 +51,16 @@ class Header extends Component {
                 </NavLink>
               }
               {Auth.loggedIn() &&
-                <NavLink to="/newpost">
-                  <Nav.Link href="/newpost">
-                    New Post
+                <NavLink to="/newapartment">
+                  <Nav.Link href="/newapartment">
+                    New Apartment
                   </Nav.Link>
                 </NavLink>
               }
               {Auth.loggedIn() &&
-                <NavLink to="/viewposts">
-                  <Nav.Link href="/viewposts">
-                    Posts
+                <NavLink to="/viewapartments">
+                  <Nav.Link href="/viewapartments">
+                    Apartments
                   </Nav.Link>
                 </NavLink>
               }

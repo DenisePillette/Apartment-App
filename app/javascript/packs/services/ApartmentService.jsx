@@ -1,8 +1,8 @@
 import AuthService from './AuthService'
 
-export default class PostService extends AuthService {
-  getPosts(token) {
-    return this.fetch(`${this.domain}/posts`, {
+export default class ApartmentService extends AuthService {
+  getApartments(token) {
+    return this.fetch(`${this.domain}/apartments`, {
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${token}`
@@ -13,15 +13,15 @@ export default class PostService extends AuthService {
     })
   }
 
-  createPost(token, new_post) {
-    return this.fetch(`${this.domain}/posts`, {
+  createApartment(token, new_apartment) {
+    return this.fetch(`${this.domain}/apartments`, {
       headers:{
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`
       },
       method: 'POST',
       body: JSON.stringify({
-        new_post: new_post
+        new_apartment: new_apartment
       })
     }).then((res) => {
       return Promise.resolve(res)

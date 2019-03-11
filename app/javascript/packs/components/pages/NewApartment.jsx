@@ -2,18 +2,18 @@ import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import { Table, Row, Form, Col, FormControl } from 'react-bootstrap'
 import AuthService from '../../services/AuthService'
-import PostService from '../../services/PostService'
+import ApartmentService from '../../services/ApartmentService'
 import withAuth from '../../services/withAuth'
 
 const Auth = new AuthService()
-const Post = new PostService()
+const Apartment = new ApartmentService()
 
-class NewPost extends Component {
+class NewApartment extends Component {
   constructor() {
     super()
     this.state = {
-      new_post: {
-        post: "",
+      new_apartment: {
+        name: "",
         user_id: Auth.getUserId()
       },
       createSuccess: false,
@@ -21,16 +21,16 @@ class NewPost extends Component {
   }
 
   handleChange(event) {
-    let post = this.state.new_post
-    post[event.target.name] = event.target.value
-    this.setState({ new_post: post })
+    let apartment = this.state.new_apartment
+    apartment[event.target.name] = event.target.value
+    this.setState({ new_apartment: apartment })
   }
 
   handleSubmit(event) {
     event.preventDefault()
-    Post.createPost(Auth.getToken(), this.state.new_post)
-      .then (successPost => {
-        console.log("Post Success", successPost);
+    Apartment.createApartment(Auth.getToken(), this.state.new_apartment)
+      .then (successApartment => {
+        console.log("Apartment Success", successApartment);
         this.setState({createSuccess: true})
       })
       .catch(err =>{ alert(err) })
@@ -41,16 +41,16 @@ class NewPost extends Component {
       <div>
         <div className="center">
           <h1>
-            Create a Post
+            List an Apartment
           </h1>
           <br />
           <Table>
             <Row>
-              <Form className="post-form">
+              <Form className="apartment-form">
                 <Col>
                   <FormControl
                     type="text"
-                    name="post"
+                    name="name"
                     placeholder=""
                     onChange={this.handleChange.bind(this)}
                   />
@@ -63,7 +63,7 @@ class NewPost extends Component {
                     className="submit"
                     onClick={this.handleSubmit.bind(this)}
                   />
-                  {this.state.createSuccess && <Redirect to="/viewposts" />}
+                  {this.state.createSuccess && <Redirect to="/viewapartments" />}
                 </Col>
               </Form>
             </Row>
@@ -75,4 +75,4 @@ class NewPost extends Component {
   }
 }
 
-export default withAuth(NewPost);
+export default withAuth(NewApartment);
