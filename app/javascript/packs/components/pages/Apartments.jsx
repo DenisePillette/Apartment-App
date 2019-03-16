@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { Table, Col, Row, ListGroup, ListGroupItem } from 'react-bootstrap'
+import { Table, Col, Row, ListGroup, ListGroupItem, Container, Card  } from 'react-bootstrap'
 import AuthService from '../../services/AuthService'
 import ApartmentService from '../../services/ApartmentService'
 import withAuth from '../../services/withAuth'
@@ -25,37 +25,46 @@ class Apartments extends Component {
 
   render() {
     return (
-      <div>
-        <div className="center">
-          <Table>
-            <br />
-            <h1>
-              Apartments
-            </h1>
-            <Row className="apartment-row">
-              <h4 className="apartments-subtitle">
-                <small className="text-muted">
-                  All the apartments!
-                </small>
-              </h4>
-              <Col>
-                <ListGroup variant="flush">
-                  <ListGroupItem />
-                  {this.state.apartments.map((apartment, index) =>
-                      <ListGroupItem key={`${apartment.name}${index}`}>
-                        <div>
-                          <div>
-                            {apartment.name}
-                          </div>
-                        </div>
-                      </ListGroupItem>
-                    ).reverse()}
-                  <ListGroupItem />
-                </ListGroup>
-              </Col>
-            </Row>
-          </Table>
-        </div>
+      <div className="center">
+        <br />
+        <h1 style={{ color: 'white' }}>
+          Apartments
+        </h1>
+        <br />
+        <Container>
+          <Row className="justify-content-md-center">
+
+            {this.state.apartments.map((apartment, index) =>
+              <div>
+                <Col>
+                  <Card className="center" style={{ width: '20rem' }}  key={`${apartment.name}${index}`}>
+                    <Card.Img variant="top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxpvUiQXvx02E2x0UzByIYmq-Ja_2Z2NbDicF82iTYFxPGk8qh" />
+                    <Card.Body>
+                      <Card.Title>
+                        {apartment.name}
+                      </Card.Title>
+                      <Card.Text>
+                        Some quick example text for <b>{apartment.name}</b> to build on the card title and make up the bulk of
+                        the card's content.
+                      </Card.Text>
+                    </Card.Body>
+                    <ListGroup className="list-group-flush">
+                      <ListGroupItem>Cras justo odio</ListGroupItem>
+                      <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
+                      <ListGroupItem>Vestibulum at eros</ListGroupItem>
+                    </ListGroup>
+                    <Card.Body>
+                      <Card.Link href="#">Card Link</Card.Link>
+                      <Card.Link href="#">Another Link</Card.Link>
+                    </Card.Body>
+                  </Card>
+                </Col>
+                <br />
+              </div>
+            ).reverse()}
+
+          </Row>
+        </Container>
       </div>
     )
   }
