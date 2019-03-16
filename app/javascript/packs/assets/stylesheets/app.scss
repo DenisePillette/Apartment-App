@@ -5,6 +5,7 @@
   margin: auto;
   padding: 10px;
   text-align: center;
+  align-items: center;
 };
 
 .image {
@@ -23,6 +24,10 @@
   display: block;
   margin-top: 5px;
   margin-bottom: 5px;
+};
+
+.welcome-page {
+  width: 500px !important;
 };
 
 .apartment-form {
@@ -44,4 +49,13 @@
   display: block;
   text-align: left;
   margin-left: 18px;
+}
+
+.App-component {
+  background-image: url(../../assets/images/new-york-skyline.jpg);
+  height: 100%;
+  min-height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }

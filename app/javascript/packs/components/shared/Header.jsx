@@ -15,7 +15,7 @@ class Header extends Component {
   render () {
     return (
       <div>
-        <Navbar collapseOnSelect bg="light" variant="light" expand="lg" fixed="top">
+        <Navbar collapseOnSelect bg="dark" variant="dark" expand="lg" fixed="top">
           <NavLink to="/">
             <Navbar.Brand href="/">
               Apartment App
