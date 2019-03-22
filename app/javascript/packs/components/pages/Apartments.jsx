@@ -28,13 +28,13 @@ class Apartments extends Component {
     return (
       <div className="center">
         <br />
-        <h1 style={{ color: 'white' }}>
+        <h1>
           Apartments
         </h1>
         <br />
         <CardDeck className="justify-content-md-center">
           {this.state.apartments.map((apartment, index) =>
-            <div>
+            <div className="apartment-card-container">
               <Card className="apartment-card" key={`${apartment.name}${index}`}>
                 <Card.Img className="apartment-card-image" variant="top" src={apartment.image_url} />
                 <Card.Body>

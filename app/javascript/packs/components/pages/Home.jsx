@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import AuthService from '../../services/AuthService'
-import puppies1 from '../../assets/images/puppies-park-1.png'
+import logo from '../../assets/images/NextHome.png'
 
 const Auth = new AuthService()
 
@@ -37,7 +37,7 @@ class Home extends Component {
           </div>
         }
         <br />
-        <img className="image" src={puppies1} alt="Puppies at the park (1)"/>
+        <img className="image" src={logo} alt="Next Home Logo"/>
       </div>
     )
   }

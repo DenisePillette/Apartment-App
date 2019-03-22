@@ -51,11 +51,12 @@
   margin-left: 18px;
 };
 
+.apartment-card-container {
+  padding-bottom: 1em;
+};
+
 .apartment-card {
-  margin: auto;
   padding: 5px;
-  text-align: center;
-  align-items: center;
   width: 20em;
   height: 100%;
 };

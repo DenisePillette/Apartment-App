@@ -18,7 +18,7 @@ class Header extends Component {
         <Navbar collapseOnSelect bg="dark" variant="dark" expand="lg" fixed="top">
           <NavLink exact to="/">
             <Navbar.Brand href="/">
-              Apartment App
+              Next Home
             </Navbar.Brand>
           </NavLink>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
