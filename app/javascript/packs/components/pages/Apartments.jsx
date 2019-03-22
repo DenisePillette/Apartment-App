@@ -1,8 +1,9 @@
 import React, {Component} from 'react'
-import { Table, Col, Row, ListGroup, ListGroupItem } from 'react-bootstrap'
+import { CardDeck, Card, ListGroup, ListGroupItem } from 'react-bootstrap'
 import AuthService from '../../services/AuthService'
 import ApartmentService from '../../services/ApartmentService'
 import withAuth from '../../services/withAuth'
+import NumberFormat from 'react-number-format'
 
 const Auth = new AuthService()
 const Apartment = new ApartmentService()
@@ -25,37 +26,46 @@ class Apartments extends Component {
 
   render() {
     return (
-      <div>
-        <div className="center">
-          <Table>
-            <br />
-            <h1>
-              Apartments
-            </h1>
-            <Row className="apartment-row">
-              <h4 className="apartments-subtitle">
-                <small className="text-muted">
-                  All the apartments!
-                </small>
-              </h4>
-              <Col>
-                <ListGroup variant="flush">
-                  <ListGroupItem />
-                  {this.state.apartments.map((apartment, index) =>
-                      <ListGroupItem key={`${apartment.name}${index}`}>
-                        <div>
-                          <div>
-                            {apartment.name}
-                          </div>
-                        </div>
-                      </ListGroupItem>
-                    ).reverse()}
-                  <ListGroupItem />
+      <div className="center">
+        <br />
+        <h1>
+          Apartments
+        </h1>
+        <br />
+        <CardDeck className="justify-content-md-center">
+          {this.state.apartments.map((apartment, index) =>
+            <div className="apartment-card-container">
+              <Card className="apartment-card" key={`${apartment.name}${index}`}>
+                <Card.Img className="apartment-card-image" variant="top" src={apartment.image_url} />
+                <Card.Body>
+                  <Card.Title>
+                    {apartment.name}
+                  </Card.Title>
+                  <Card.Text>
+                    Some quick example text for <b>{apartment.name}</b> to build on the card title and make up the bulk of
+                    the card's content.
+                  </Card.Text>
+                </Card.Body>
+                <ListGroup className="list-group-flush">
+                  <ListGroupItem>
+                    {apartment.address}
+                    <br />
+                    {apartment.address2}
+                  </ListGroupItem>
+                  <ListGroupItem>{apartment.city}, {apartment.state} {apartment.zip}</ListGroupItem>
+                  <ListGroupItem>
+                    <b><NumberFormat displayType={'text'} thousandSeparator={true} prefix={'$'} value={apartment.price} /></b>
+                  </ListGroupItem>
                 </ListGroup>
-              </Col>
-            </Row>
-          </Table>
-        </div>
+                <Card.Body>
+                  <Card.Link href="#">Contact</Card.Link>
+                  <Card.Link href="#">Map View</Card.Link>
+                </Card.Body>
+              </Card>
+              <br />
+            </div>
+          ).reverse()}
+        </CardDeck>
       </div>
     )
   }

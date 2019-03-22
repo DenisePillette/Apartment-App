@@ -5,7 +5,7 @@ class Footer extends Component {
   render() {
     return (
       <div>
-        <Navbar bg="light" variant="light" expand="lg" fixed="bottom">
+        <Navbar bg="dark" variant="dark" expand="lg" fixed="bottom">
           <div>
             <span>
               Apartment App by&nbsp;

@@ -42,7 +42,7 @@ class ApartmentsController < ApplicationController
   private
 
   def apartment_params
-    params.require(:new_apartment).permit(:user_id, :name)
+    params.require(:new_apartment).permit(:user_id, :name, :contact, :phone, :address, :address2, :city, :state, :zip, :price, :image_url)
   end
 
   def authorize_update

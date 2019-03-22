@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import puppies2 from '../../assets/images/puppies-park-2.png'
+import logo from '../../assets/images/NextHome.png'
 
 class About extends Component {
   render() {
@@ -13,7 +13,7 @@ class About extends Component {
           Fancy meeting you here!
         </h3>
         <br />
-        <img className="image" src={puppies2} alt="Puppies at the park (2)" />
+        <img className="image" src={logo} alt="Next Home Logo" />
       </div>
     )
   }
