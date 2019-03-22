@@ -34,8 +34,8 @@ class Apartments extends Component {
         <br />
         <CardDeck className="justify-content-md-center">
           {this.state.apartments.map((apartment, index) =>
-            <div className="apartment-card-container">
-              <Card className="apartment-card" key={`${apartment.name}${index}`}>
+            <div key={`${apartment.id}${index}`} className="apartment-card-container">
+              <Card className="apartment-card">
                 <Card.Img className="apartment-card-image" variant="top" src={apartment.image_url} />
                 <Card.Body>
                   <Card.Title>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Redirect, NavLink } from 'react-router-dom'
-import { Table, Col, Row, FormControl, Form } from 'react-bootstrap'
+import { Form, FormControl } from 'react-bootstrap'
 import AuthService from '../../services/AuthService'
 
 const Auth = new AuthService()
@@ -82,10 +82,8 @@ class SignUp extends Component {
         <br />
         <div>
           Already have an account?&nbsp;
-          <NavLink to="/login">
-            <a href="/login">
-              Login
-            </a>
+          <NavLink to="/login" as="span">
+            Login
           </NavLink>
         </div>
       </div>

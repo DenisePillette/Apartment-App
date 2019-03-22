@@ -16,62 +16,57 @@ class Header extends Component {
     return (
       <div>
         <Navbar collapseOnSelect bg="dark" variant="dark" expand="lg" fixed="top">
-          <NavLink exact to="/">
-            <Navbar.Brand href="/">
+          <NavLink exact to="/" as="span">
+            <Navbar.Brand href="/" as="span">
               Next Home
             </Navbar.Brand>
           </NavLink>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mr-auto">
-              <NavLink exact to="/">
-                <Nav.Link href="/">
-                  Home
-                </Nav.Link>
-              </NavLink>
+          <Navbar.Toggle />
+          <Navbar.Collapse as="span">
+            <Nav activeKey="/" onSelect={()=>{}}>
               {!Auth.loggedIn() &&
-                <NavLink exact to="/signup">
-                  <Nav.Link href="/signup">
+                <NavLink exact to="/signup" as="span">
+                  <Nav.Link href="/signup" as="span">
                     Sign Up
                   </Nav.Link>
                 </NavLink>
               }
               {!Auth.loggedIn() &&
-                <NavLink exact to="/login">
-                  <Nav.Link href="/login">
+                <NavLink exact to="/login" as="span">
+                  <Nav.Link href="/login" as="span">
                     Login
                   </Nav.Link>
                 </NavLink>
               }
               {Auth.loggedIn() &&
-                <NavLink exact to="/welcome">
-                  <Nav.Link href="/welcome">
+                <NavLink exact to="/welcome" as="span">
+                  <Nav.Link href="/welcome" as="span">
                     Welcome
                   </Nav.Link>
                 </NavLink>
               }
               {Auth.loggedIn() &&
-                <NavLink exact to="/newapartment">
-                  <Nav.Link href="/newapartment">
+                <NavLink exact to="/newapartment" as="span">
+                  <Nav.Link href="/newapartment" as="span">
                     New Apartment
                   </Nav.Link>
                 </NavLink>
               }
               {Auth.loggedIn() &&
-                <NavLink exact to="/viewapartments">
-                  <Nav.Link href="/viewapartments">
+                <NavLink exact to="/viewapartments" as="span">
+                  <Nav.Link href="/viewapartments" as="span">
                     Apartments
                   </Nav.Link>
                 </NavLink>
               }
-              <NavLink exact to="/about">
-                <Nav.Link href="/about">
+              <NavLink exact to="/about" as="span">
+                <Nav.Link href="/about" as="span">
                   About
                 </Nav.Link>
               </NavLink>
               {Auth.loggedIn() &&
-                <NavLink exact to="/login">
-                  <Nav.Link href="/login" onClick={this.handleLogout.bind(this)}>
+                <NavLink exact to="/login" as="span">
+                  <Nav.Link href="/login" as="span" onClick={this.handleLogout.bind(this)}>
                     Logout
                   </Nav.Link>
                 </NavLink>

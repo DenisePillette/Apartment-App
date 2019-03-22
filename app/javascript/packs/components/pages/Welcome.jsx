@@ -1,11 +1,20 @@
 import React, { Component } from 'react'
-import { NavLink } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 import { Container, Card, Button } from 'react-bootstrap'
 import withAuth from '../../services/withAuth'
-import puppies3 from '../../assets/images/puppies-park-3.png'
-
 
 class Welcome extends Component {
+  constructor() {
+    super()
+    this.state = {
+      clickedCreateApartment: false
+    }
+  }
+
+  clickCreatePost() {
+    this.setState({clickedCreateApartment: true})
+  }
+
   render() {
     return (
       <div className="center">
@@ -22,13 +31,14 @@ class Welcome extends Component {
               <Card.Text>
                   Thanks for logging in!
               </Card.Text>
-              <NavLink to="/newapartment">
-                <a href="/newapartment">
-                  <Button variant="dark">
-                    Click HERE to list an Apartment
-                  </Button>
-                </a>
-              </NavLink>
+              <Button
+                variant="dark"
+                type="submit"
+                onClick={this.clickCreatePost.bind(this)}
+              >
+                Click HERE to list an Apartment
+              </Button>
+              {this.state.clickedCreateApartment && <Redirect to="/newapartment" />}
               <br />
             </Card.Body>
           </Card>

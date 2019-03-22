@@ -8,6 +8,10 @@
   align-items: center;
 };
 
+a:hover {
+  text-decoration: none;
+};
+
 .image {
   max-width: 500px;
   max-height: 500px;

@@ -17,22 +17,18 @@ class Home extends Component {
           Thanks for stopping by!
         </h3>
         {!Auth.loggedIn() &&
-          <div className="text-muted">
+          <div>
             Don't have an account?&nbsp;
             <NavLink to="/signup">
-              <a href="/signup">
                 Sign up
-              </a>
             </NavLink>
           </div>
         }
         {!Auth.loggedIn() &&
-          <div className="text-muted">
+          <div>
             Already have an account?&nbsp;
             <NavLink to="/login">
-              <a href="/login">
-                Login
-              </a>
+              Login
             </NavLink>
           </div>
         }
