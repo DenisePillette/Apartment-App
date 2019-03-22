@@ -14,6 +14,14 @@ class NewApartment extends Component {
     this.state = {
       new_apartment: {
         name: "",
+        contact: "",
+        phone: "",
+        address: "",
+        address2: "",
+        city: "",
+        state: "",
+        zip: "",
+        price: null,
         user_id: Auth.getUserId()
       },
       createSuccess: false,
@@ -52,51 +60,48 @@ class NewApartment extends Component {
                 <Form.Row>
                   <Form.Group as={Col} controlId="formGridName">
                     <Form.Label>Building Name</Form.Label>
-                    <Form.Control type="name" placeholder="Enter name" name="name" onChange={this.handleChange.bind(this)} />
+                    <Form.Control type="name" name="name" placeholder="Enter name" onChange={this.handleChange.bind(this)} />
                   </Form.Group>
 
                   <Form.Group as={Col} controlId="formGridContact">
                     <Form.Label>Contact Name</Form.Label>
-                    <Form.Control type="contact" placeholder="Enter name" />
+                    <Form.Control name="contact" placeholder="Enter name" onChange={this.handleChange.bind(this)} />
                   </Form.Group>
                 </Form.Row>
 
                 <Form.Label>Phone Number</Form.Label>
-                <Form.Control type="phone" placeholder="#" />
+                <Form.Control name="phone" placeholder="#" onChange={this.handleChange.bind(this)} />
                 <br />
 
                 <Form.Group controlId="formGridAddress1">
                   <Form.Label>Address</Form.Label>
-                  <Form.Control placeholder="1234 Main St" />
+                  <Form.Control name="address" placeholder="1234 Main St" onChange={this.handleChange.bind(this)} />
                 </Form.Group>
 
                 <Form.Group controlId="formGridAddress2">
                   <Form.Label>Address 2</Form.Label>
-                  <Form.Control placeholder="Apartment, studio, or floor" />
+                  <Form.Control name="address2" placeholder="Apartment, studio, or floor" onChange={this.handleChange.bind(this)} />
                 </Form.Group>
 
                 <Form.Row>
                   <Form.Group as={Col} controlId="formGridCity">
                     <Form.Label>City</Form.Label>
-                    <Form.Control />
+                    <Form.Control name="city" onChange={this.handleChange.bind(this)} />
                   </Form.Group>
 
                   <Form.Group as={Col} controlId="formGridState">
                     <Form.Label>State</Form.Label>
-                    <Form.Control as="select">
-                      <option>Choose...</option>
-                      <option>...</option>
-                    </Form.Control>
+                    <Form.Control name="state" onChange={this.handleChange.bind(this)} />
                   </Form.Group>
 
                   <Form.Group as={Col} controlId="formGridZip">
                     <Form.Label>Zip</Form.Label>
-                    <Form.Control />
+                    <Form.Control name="zip" onChange={this.handleChange.bind(this)} />
                   </Form.Group>
                 </Form.Row>
 
                 <Form.Label><h5>Price</h5></Form.Label>
-                <Form.Control type="price" placeholder="$" />
+                <Form.Control name="price" placeholder="$" onChange={this.handleChange.bind(this)} />
                 <br />
 
                 <input type="file" name="photo" onChange={this.handleChange.bind(this)} />

@@ -43,13 +43,27 @@
   margin-top: 5px;
   margin-bottom: 5px;
   width: 550px !important;
-}
+};
 
 .apartments-subtitle {
   display: block;
   text-align: left;
   margin-left: 18px;
-}
+};
+
+.apartment-card {
+  margin: auto;
+  padding: 5px;
+  text-align: center;
+  align-items: center;
+  width: 20em;
+  height: 100%;
+};
+
+.apartment-card-image {
+  height: 10em;
+  object-fit: cover;
+};
 
 .App-component {
   background-image: url(../../assets/images/new-york-skyline.jpg);
@@ -58,4 +72,4 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-}
+};

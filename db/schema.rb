@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_09_220526) do
+ActiveRecord::Schema.define(version: 2019_03_22_050057) do
 
   create_table "apartments", force: :cascade do |t|
     t.text "name"
@@ -18,6 +18,15 @@ ActiveRecord::Schema.define(version: 2019_03_09_220526) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.datetime "deleted_at"
+    t.string "contact"
+    t.string "phone"
+    t.string "address"
+    t.string "address2"
+    t.string "city"
+    t.string "state"
+    t.string "zip"
+    t.integer "price"
+    t.string "image_url"
     t.index ["deleted_at"], name: "index_apartments_on_deleted_at"
     t.index ["user_id"], name: "index_apartments_on_user_id"
   end
