@@ -8,7 +8,7 @@ class Footer extends Component {
         <Navbar bg="dark" variant="dark" expand="lg" fixed="bottom">
           <div>
             <span>
-              Apartment App by&nbsp;
+              Next Home by&nbsp;
             </span>
             <a href="https://github.com/DenisePillette" target="new">
               DenisePillette
